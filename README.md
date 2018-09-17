@@ -49,3 +49,8 @@ https://poor-user.blogspot.com/
 I have been testing for about half a year. This is my solution to the misfortune of installing multiple ubuntu, mint, antergos, archlinux etc, which brings kernel panic to users.
 
 I think that there is no fatal bug already, so I will try to make it public. It will be useful for about 3 people worldwide.
+
+# Licens
+
+This programs is GPL. you have to read GPL.txt.
+

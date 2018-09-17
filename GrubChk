@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+#@ check grub.cfg
+
+# grep戻り値$?マッチ行があれば0、なければ1
+# grep戻り値$? 0:一致した 1:一致しなかった
+sudo cat /boot/grub/grub.cfg | grep -nP 'intel-ucode.img$'
+#:
+    if [ $? -eq 0 ]; then
+        # echo "  :"
+        echo ":: Incorrect"
+        echo  Troubled Lines: $(sudo cat /boot/grub/grub.cfg | grep -nP 'intel-ucode.img$' | wc -l)
+        echo  match.  maybe kernel panic!! There are some entry of No boot.
+        echo ""
+        echo "Measures:"
+        echo "   you must check /boot/grub/grub.cfg at own risk."
+        echo "   sudo ~/bin/manjaro_bootable2.pl -v"
+        echo "   type sudo ...fullpath.../manjaro_bootable2.pl -v"
+    exit
+        echo ""
+        sudo cat /boot/grub/grub.cfg | grep -nP 'intel-ucode.img'
+        echo ""
+        echo "sudo cat /boot/grub/grub.cfg | grep -nP 'intel-ucode.img$'"
+    else
+        echo ":: Correct"
+        echo  No Troubled Line: $(sudo cat /boot/grub/grub.cfg | grep -nP 'intel-ucode.img$' | wc -l)
+        #  ➡    .
+    fi
+exit 0
+
+# echo トラブル行と一致しない（intel-ucode.img$）。no kernel panic. トラブルはおそらくおきません。
+
+#

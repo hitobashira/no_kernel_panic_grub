@@ -6,10 +6,15 @@ Danger!! Run command with ROOT/Superuser privileges.
 ```
 type in terminal on Ubuntu/LinuxMint.
 
-sudo /fullpath/manjaro_bootable.pl -V 
+$ sudo /fullpath/manjaro_bootable.pl -V 
 
 cf.
-sudo     ~/bin/manjaro_bootable.pl -V 
+$ sudo     ~/bin/manjaro_bootable.pl -V 
+
+
+bonus)It is a script to check if manjaro is bootable. on ubuntu/mint's grub.
+$ sudo GrubChk #on ubuntu/mint without manjaro.
+
 ```
 
 # manjaro_bootable.pl Ver.0.8 alpha test. 2018-03-25,09-13

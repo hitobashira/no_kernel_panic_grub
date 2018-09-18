@@ -42,10 +42,10 @@ $ sudo GrubChk #on ubuntu/mint without manjaro.
  Only Run command on ubuntu/Mint.
 ``` 
  
-#!! Better Practice!! You may install your bootloader at manjaro partation.
+### Better Practice!! You may install your bootloader at manjaro partation.
 And shall be given Happy, a little.
  
-## author
+### author
 Kenkowo Nishihama live in Osaka,Japan.
 https://poor-user.blogspot.com/
 

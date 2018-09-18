@@ -2,7 +2,7 @@
 Easyway. Make manjaroLinux,antergos,archLinux bootable.
 
 # Why this program is necessary
-
+## for multiboot users (eg. ubuntu and archlinux and the other , linuxmint and manjaro and windows10)
 ubuntu and its derivative Linux Mint bring in a kernel panic of antergos, archlinux, etc. with 100% probability every time of Kernel configuration.
 
 I think that this phenomenon occurred several years ago. Strangely, no one will cure it even if there is a report. Probably we only need to fix os-prober that update-grub calls, but sh is hard for me.

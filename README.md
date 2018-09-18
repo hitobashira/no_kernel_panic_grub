@@ -1,6 +1,9 @@
 # no_kernel_panic manjaro_bootable
 Easyway. Make manjaroLinux,antergos,archLinux bootable.
 
+![UEFI SSD](https://github.com/hitobashira/no_kernel_panic/blob/master/Screenshot.png)
+
+
 # Why this program is necessary
 ## for multiboot users (eg. ubuntu and archlinux and the other , linuxmint and manjaro and windows10)
 ubuntu and its derivative Linux Mint bring in a kernel panic of antergos, archlinux, etc. with 100% probability every time of Kernel configuration.

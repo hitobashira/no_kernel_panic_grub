@@ -1,8 +1,16 @@
 # no_kernel_panic manjaro_bootable
 Easyway. Make manjaroLinux,antergos,archLinux bootable.
 
-![UEFI SSD](https://github.com/hitobashira/no_kernel_panic/blob/master/Screenshot.png)
+Kernel　Panic :: Figure 0
+![kernelpanic](https://github.com/hitobashira/no_kernel_panic/blob/master/kernelpanic.png)
 
+## manjaro_bootable.pl Ver.0.8.1 alpha test. 2018-03-25,09-13,9-20
+ make bootable (ubuntu/Mint)grub.cfg ,manjaro/archlinux entry.
+```
+ Only Run command on ubuntu/Mint.
+``` 
+
+![UEFI SSD](https://github.com/hitobashira/no_kernel_panic/blob/master/Screenshot.png)
 
 # Why this program is necessary
 ## for multiboot users (eg. ubuntu and archlinux and the other , linuxmint and manjaro and windows10)
@@ -36,11 +44,13 @@ $ sudo GrubChk #on ubuntu/mint without manjaro.
 
 ```
 
-## manjaro_bootable.pl Ver.0.8 alpha test. 2018-03-25,09-13
- make bootable (ubuntu/Mint)grub.cfg ,manjaro/archlinux entry.
-```
- Only Run command on ubuntu/Mint.
-``` 
+
+Example of operation :: Figure 1
+![fig01.png](https://github.com/hitobashira/no_kernel_panic/blob/master/fig01.png)
+
+Example of operation :: Figure 2
+![fig02.png](https://github.com/hitobashira/no_kernel_panic/blob/master/fig02.png)
+
  
 ### Better Practice!! You may install your bootloader at manjaro partation.
 And shall be given Happy, a little.

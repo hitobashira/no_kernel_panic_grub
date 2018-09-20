@@ -13,9 +13,9 @@ use utf8;
 # And shall be given Happy, a little.
 ################################################
 
-=cut
-
 ### pre_step 1 ### caution
+
+
 
 use Getopt::Std;
 my %opt;
@@ -25,7 +25,6 @@ unless (  exists $opt{V}  ) {
     say "Danger!! Run command with ROOT/Superuser privileges. \n  type.\n  sudo $0 -V" ;
     exit;
 }
-
 ### check root's privileges.
 
 my $user = getpwuid($>);
@@ -34,10 +33,9 @@ if ( $user !~ /root/ ){
     exit;
 }
 
-
 ### pre_step 2 ###
     `sudo cp  /boot/grub/grub.cfg /tmp/grub.cfg_original` ; #backup
-
+#big block start
     {
     local $/; #複数行を1行として扱う。ヌル。一括で読み込む。
 
@@ -64,16 +62,16 @@ if ( $user !~ /root/ ){
     open(IN,"/tmp/grub.cfg_original");
     while (<IN>){
         if ( $_ =~  m{^\s+initrd /boot/intel-ucode.img$}sm ){
-        say "found Target lines!!!! ";
+        say "found Target/Troubled lines!!!! ";
         # next;
         }
         else{
-        say "No Target lines! " and exit;
+        say "No Target/Troubled lines! Correct." and exit;
         }
         }
     close(IN);
 
-    }
+  }#big block end
 
 ### step 1 ### main
 

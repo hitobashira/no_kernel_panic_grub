@@ -13,8 +13,8 @@ sudo cat /boot/grub/grub.cfg | grep -nP 'intel-ucode.img$'
         echo ""
         echo "Measures:"
         echo "   you must check /boot/grub/grub.cfg at own risk."
-        echo "   sudo ~/bin/manjaro_bootable2.pl -v"
-        echo "   type sudo ...fullpath.../manjaro_bootable2.pl -v"
+        echo "   sudo ~/bin/manjaro_bootable.pl -V"
+        echo "   type sudo ...fullpath.../manjaro_bootable.pl -V"
     exit
         echo ""
         sudo cat /boot/grub/grub.cfg | grep -nP 'intel-ucode.img'
@@ -28,5 +28,3 @@ sudo cat /boot/grub/grub.cfg | grep -nP 'intel-ucode.img$'
 exit 0
 
 # echo トラブル行と一致しない（intel-ucode.img$）。no kernel panic. トラブルはおそらくおきません。
-
-#

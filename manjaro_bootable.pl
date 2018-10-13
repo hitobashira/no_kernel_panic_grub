@@ -95,7 +95,7 @@ my $grubcfg="/boot/grub/grub.cfg";
 
 while (<IN>) {
 
-m|^\s+linux /boot/(vmlinuz-)(4\.\d\d-x86_64) root=UUID.*?rw quiet$| ; #
+m|^\s+linux /boot/(vmlinuz-)(4\.\d\d-x86_64) root=UUID.*?rw quiet| ; #
 # m|\A\s+linux /boot/(vmlinuz-)(4\.\d\d-x86_64) root=UUID.*+rw quiet\z| ; #
 
 my $kernelversion = $2 ;

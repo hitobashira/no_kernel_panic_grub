@@ -1,8 +1,10 @@
 # no_kernel_panic manjaro_bootable
 Easyway. Make manjaroLinux,antergos,archLinux bootable.
 
-## /fullpath/GrubChk checkonly. 
-## sudo /fullpath/manjaro_bootable.pl -V Rewrite grub.cfg.
+## /fullpath/GrubChk
+checkonly. 
+## sudo /fullpath/manjaro_bootable.pl -V
+rewrite grub.cfg.
 
 ## install
 unzip for dir where you want. eg ~/bin

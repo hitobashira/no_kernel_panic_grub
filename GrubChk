@@ -3,12 +3,16 @@
 
 # grep戻り値$?マッチ行があれば0、なければ1
 # grep戻り値$? 0:一致した 1:一致しなかった
-sudo cat /boot/grub/grub.cfg | grep -nP 'intel-ucode.img$'
+
+# ucodeimage=intel-ucode.img #intel-ucode.img to amd OLD
+# ucodeimage=amd-ucode.img #intel-ucode.img to amd
+
+sudo cat /boot/grub/grub.cfg | grep -nP "(amd|intel)-ucode.img$"
 #:
     if [ $? -eq 0 ]; then
         # echo "  :"
         echo ":: Incorrect"
-        echo  Troubled Lines: $(sudo cat /boot/grub/grub.cfg | grep -nP 'intel-ucode.img$' | wc -l)
+        echo  Troubled Lines: $(sudo cat /boot/grub/grub.cfg | grep -nP "(amd|intel)-ucode.img$" | wc -l)
         echo  match.  maybe kernel panic!! There are some entry of No boot.
         echo ""
         echo "Measures:"
@@ -17,14 +21,16 @@ sudo cat /boot/grub/grub.cfg | grep -nP 'intel-ucode.img$'
         echo "   type sudo ...fullpath.../manjaro_bootable.pl -V"
     exit
         echo ""
-        sudo cat /boot/grub/grub.cfg | grep -nP 'intel-ucode.img'
+        sudo cat /boot/grub/grub.cfg | grep -nP '(amd|intel)-ucode.img'
         echo ""
-        echo "sudo cat /boot/grub/grub.cfg | grep -nP 'intel-ucode.img$'"
+        echo "sudo cat /boot/grub/grub.cfg | grep -nP (amd|intel)-ucode.img$"
     else
         echo ":: Correct"
-        echo  No Troubled Line: $(sudo cat /boot/grub/grub.cfg | grep -nP 'intel-ucode.img$' | wc -l)
+        echo  No Troubled Line: $(sudo cat /boot/grub/grub.cfg | grep -nP "(amd|intel)-ucode.img$" | wc -l)
         #  ➡    .
     fi
 exit 0
 
 # echo トラブル行と一致しない（intel-ucode.img$）。no kernel panic. トラブルはおそらくおきません。
+
+#

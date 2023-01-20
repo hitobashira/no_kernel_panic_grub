@@ -97,9 +97,8 @@ while (<IN>) {
 
 #m|  linux /boot/vmlinuz-4.18-x86_64 root=UUID.*?=e24ef643-9c9a-4b59-9c79-8816e426b2f9 rw quiet resume=UUID=0aadda7a-dd34-4322-86a5-4e6dd98cf52b
 
-m|^\s+linux /boot/(vmlinuz-)(6\.\d\d?-x86_64) root=UUID.*?rw| ; #
 m|^\s+linux /boot/(vmlinuz-)(8\.\d\d?-x86_64) root=UUID.*?rw| ; #
-m|^\s+linux /boot/(vmlinuz-)(4\.\d\d?-x86_64) root=UUID.*?rw| ; #
+m|^\s+linux /boot/(vmlinuz-)(7\.\d\d?-x86_64) root=UUID.*?rw| ; #
 m|^\s+linux /boot/(vmlinuz-)(6\.\d\d?-x86_64) root=UUID.*?rw| ; #
 m|^\s+linux /boot/(vmlinuz-)(5\.\d\d?-x86_64) root=UUID.*?rw| ; #
 m|^\s+linux /boot/(vmlinuz-)(4\.\d\d-x86_64) root=UUID.*?rw| ; #

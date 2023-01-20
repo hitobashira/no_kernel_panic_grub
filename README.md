@@ -1,6 +1,13 @@
 # no_kernel_panic manjaro_bootable
 Easyway. Make manjaroLinux,antergos,archLinux bootable.
 
+## 2023 JAN. 21 
+tested kernel on Manjaro.
+- initrd /boot/amd-ucode.img /boot/initramfs-6.1-x86_64.img
+- initrd /boot/amd-ucode.img /boot/initramfs-6.0-x86_64.img
+- initrd /boot/amd-ucode.img /boot/initramfs-5.15-x86_64.img
+
+
 Kernel　Panic :: Figure 0
 ![kernelpanic](https://github.com/hitobashira/no_kernel_panic/blob/master/kernelpanic.png)
 

@@ -44,7 +44,7 @@ if ( $user !~ /root/ ){
     open(IN2,"/etc/lsb-release");
     while(<IN2>) {
         if ( m/manjaro|arch|antergos/i ){
-            say "$&";
+            say "$& , use this on ubuntu/mint.";
             exit;
         }
         elsif (    m/Mint|ubuntu/i  ) {
@@ -61,7 +61,7 @@ if ( $user !~ /root/ ){
 
     open(IN,"/tmp/grub.cfg_original");
     while (<IN>){
-        if ( $_ =~  m{^\s+initrd /boot/intel-ucode.img$}sm ){
+        if ( $_ =~  m{^\s+initrd /boot/amd-ucode.img$}sm ){
         say "found Target/Troubled lines!!!! ";
         # next;
         }
@@ -108,7 +108,7 @@ m|^\s+linux /boot/(vmlinuz-)(4\.\d\d-x86_64) root=UUID.*?rw| ; #
 my $kernelversion ;
 $kernelversion = $2 ;
 #delete print $kernelversion ;
-my $ucode = "initrd /boot/intel-ucode.img";
+my $ucode = "initrd /boot/amd-ucode.img";
             #main
 #manjaro manjaro manjaro manjaro manjaro
     if ( m/^menuentry \'Manjaro Linux / .. m{^\s+$ucode$} )

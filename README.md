@@ -1,6 +1,16 @@
 # no_kernel_panic manjaro_bootable
 Easyway. Make manjaroLinux,antergos,archLinux bootable.
 
+## /fullpath/GrubChk checkonly. 
+## sudo /fullpath/manjaro_bootable.pl -V Rewrite grub.cfg.
+
+## install
+unzip for dir where you want. eg ~/bin
+
+## uninstall 
+just delete. cli or filemanager.
+
+
 ## 2023 JAN. 21 
 tested kernel on Manjaro.
 - initrd /boot/amd-ucode.img /boot/initramfs-6.1-x86_64.img

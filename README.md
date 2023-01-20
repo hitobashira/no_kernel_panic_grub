@@ -12,7 +12,51 @@ unzip for dir where you want. eg ~/bin
 ## uninstall 
 just delete. cli or filemanager.
 
+# test case
+```
+❯ sudo GrubChk
+272:    initrd /boot/amd-ucode.img
+281:            initrd /boot/amd-ucode.img
+289:            initrd /boot/amd-ucode.img
+305:            initrd /boot/amd-ucode.img
+321:            initrd /boot/amd-ucode.img
+:: Incorrect
+Troubled Lines: 5
+match. maybe kernel panic!! There are some entry of No boot.
 
+Measures:
+   you must check /boot/grub/grub.cfg at own risk.
+   sudo ~/bin/manjaro_bootable.pl -V
+   type sudo ...fullpath.../manjaro_bootable.pl -V
+
+❯ sudo ~/bin2/manjaro_bootable.pl -V
+Manjaro , use this on ubuntu/mint.
+found Target/Troubled lines!!!!
+color diff starting :: RED Lines has been Corrected.
+272c272
+<       initrd /boot/amd-ucode.img /boot/initramfs-6.1-x86_64.img
+---
+>       initrd /boot/amd-ucode.img
+281c281
+<               initrd /boot/amd-ucode.img /boot/initramfs-6.1-x86_64.img
+---
+>               initrd /boot/amd-ucode.img
+289c289
+<               initrd /boot/amd-ucode.img /boot/initramfs-6.1-x86_64.img
+---
+>               initrd /boot/amd-ucode.img
+305c305
+<               initrd /boot/amd-ucode.img /boot/initramfs-6.0-x86_64.img
+---
+>               initrd /boot/amd-ucode.img
+321c321
+<               initrd /boot/amd-ucode.img /boot/initramfs-5.15-x86_64.img
+---
+>               initrd /boot/amd-ucode.img
+        === diff done ===
+type GrubChk
+sudo ~/bin2/manjaro_bootable.pl -V
+```
 ## 2023 JAN. 21 
 tested kernel on Manjaro.
 - initrd /boot/amd-ucode.img /boot/initramfs-6.1-x86_64.img

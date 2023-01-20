@@ -2,7 +2,7 @@
 #@ manjaro_bootable
 use strict;
 use warnings;
-use v5.24;#5.20
+use v5.30;#5.20
 use utf8;
 # manjaro_bootable.pl Ver.0.8 alpha test. 2018-03-25,09-13
 # (ubuntu/Mint)grub.cfg 上の manjaro/archlinux entry をブート可能にする。
@@ -95,10 +95,20 @@ my $grubcfg="/boot/grub/grub.cfg";
 
 while (<IN>) {
 
-m|^\s+linux /boot/(vmlinuz-)(4\.\d\d-x86_64) root=UUID.*?rw quiet| ; #
+#m|  linux /boot/vmlinuz-4.18-x86_64 root=UUID.*?=e24ef643-9c9a-4b59-9c79-8816e426b2f9 rw quiet resume=UUID=0aadda7a-dd34-4322-86a5-4e6dd98cf52b
+
+m|^\s+linux /boot/(vmlinuz-)(6\.\d\d?-x86_64) root=UUID.*?rw| ; #
+m|^\s+linux /boot/(vmlinuz-)(8\.\d\d?-x86_64) root=UUID.*?rw| ; #
+m|^\s+linux /boot/(vmlinuz-)(4\.\d\d?-x86_64) root=UUID.*?rw| ; #
+m|^\s+linux /boot/(vmlinuz-)(6\.\d\d?-x86_64) root=UUID.*?rw| ; #
+m|^\s+linux /boot/(vmlinuz-)(5\.\d\d?-x86_64) root=UUID.*?rw| ; #
+m|^\s+linux /boot/(vmlinuz-)(4\.\d\d-x86_64) root=UUID.*?rw| ; #
+#m|^\s+linux /boot/(vmlinuz-)(4\.\d\d-x86_64) root=UUID.*?rw quiet| ; #
 # m|\A\s+linux /boot/(vmlinuz-)(4\.\d\d-x86_64) root=UUID.*+rw quiet\z| ; #
 
-my $kernelversion = $2 ;
+my $kernelversion ;
+$kernelversion = $2 ;
+#delete print $kernelversion ;
 my $ucode = "initrd /boot/intel-ucode.img";
             #main
 #manjaro manjaro manjaro manjaro manjaro
@@ -174,16 +184,18 @@ close (OUT);
 
 ### Step END ###
 
-say "\t=== diff ===" ;
+say "color diff starting :: RED Lines has been Corrected.";
+    # system "sudo colordiff  $outfile $infile || sudo diff  $outfile $infile";  # diff new old 2021年1月6日
+    # system "sudo diff  $outfile $infile  | colordiff ";     # diff new old 2021年1月6日
+    system "diff  $outfile $infile  | colordiff ";     # diff new old 2021年1月6日
+    system "sudo cp         $outfile $grubcfg";     # cp generated New grub.cfg
 
-    system "sudo diff  $outfile $infile";  # diff new old
-    system "sudo cp    $outfile $grubcfg"; # cp generated New grub.cfg
-
-say "\t=== done ===" ;
+say "\t=== diff done ===" ;
 
 ### Dameoshi ###
 
     say "type GrubChk"; #
+    say "sudo ~/bin2/manjaro_bootable.pl -V" ;
 
 
 __END__

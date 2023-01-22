@@ -12,6 +12,15 @@ unzip for dir where you want. eg ~/bin
 ## uninstall 
 just delete. cli or filemanager.
 
+## How to return in case of failure
+
+### sudo update-grub
+(A new grub.cfg will be generated. If the bug was originally included, it will remain as it is.)
+
+### Backup file grub.cfg just before issuing the command
+see /tmp
+ls /tmp/grub*
+
 # test case
 ```
 ❯ sudo GrubChk
